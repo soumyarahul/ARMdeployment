@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminUsername": {
+            "value": "adam"
+        },
+        "adminPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/7755b091-fa1f-419a-8f11-c0b9b6c595fa/resourceGroups/ServerAutomationDemo/providers/Microsoft.KeyVault/vaults/ServerAutomationDemoKV15"
+                },
+                "secretName": "StandardVmAdminPassword"
+            }
+        },
+        "vmName": {
+            "value": "TESTVMDEPLOY"
+        }
+    }
+}
